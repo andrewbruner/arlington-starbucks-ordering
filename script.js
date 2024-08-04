@@ -45,6 +45,12 @@ function loadApp() {
 	const uomsText = state.uomsText;
 
 	// App > Heading
+	if (stage === 'distributor') {
+		const store = document.createElement('div');
+		store.classList = 'store';
+		store.textContent = 'Arlington';
+		$app.append(store);
+	}
 	const $heading = document.createElement('h1');
 	$heading.classList.add('heading');
 	$heading.textContent = stagesText[stages.indexOf(stage)];
@@ -75,7 +81,7 @@ function loadApp() {
 				state.stage = 'onHand';
 
 				// Fetch Data
-				const spreadsheetId = '1DDYliKZaRh0reUxmcLrQ-QS_2lf_qmeIuiM0nRWN_gk';
+				const spreadsheetId = '1Imhfmg0KCSaNFPxwThmpAGtFwgvj2XGVwUVceNcMSsA';
 				const range = distributor;
 				const key = 'AIzaSyADnkNWzw5wme2wHe2PQzpjm-Kv77Hsl_s';
 				const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${key}`;
